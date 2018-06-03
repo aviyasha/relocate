@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-3">
+  	<p><%= link_to "Back to Profile", user_path(current_user) %></p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= form_for @user, html: { multipart: true } do |f| %>
+			<div class="row">
+			  <div class="col-md-4">
+			    <p><%= f.label :first_name %>
+			    <%= f.text_field :first_name, class: 'form-control' %></p>
+				</div>
+
+			  <div class="col-md-4">
+			    <p><%= f.label :last_name %>
+			    <%= f.text_field :last_name, class: 'form-control' %></p>
+				</div>
+
+			  <div class="col-md-4">
+			    <p><%= f.label :email %>
+			    <%= f.email_field :email, class: 'form-control' %></p>
+				</div>
+
+				<div class="col-md-4">
+			    <p><%= f.label :profession %>
+			    <%= f.text_field :profession, class: 'form-control' %></p>
+				</div>
+
+				<div class="col-md-4">
+			    <p><%= f.label :education %>
+			    <%= f.text_field :education, class: 'form-control' %></p>
+			  </div>
+
+			  <div class="col-md-4">
+			    <p><%= f.label :birth_date %>
+			    <%= f.date_field :birth_date, class: 'form-control' %></p>
+			  </div>
+
+			  <div class="col-md-6">
+			    <p><%= f.label :about %>
+			    <%= f.text_area :about, class: 'form-control', rows: 5 %></p>
+			  </div>
+
+			  <div class="col-md-8">
+			    <p><%= f.label :avatar %>
+			    <%= f.file_field :avatar %></p>
+			  </div>
+
+			  <div class="col-md-8">
+			    <p><%= f.label :resume %>
+			    <%= f.file_field :resume %></p>
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-2">
+			  	<br>
+			  	<p><%= f.submit "Update", class: "btn btn-primary form-control" %></p>
+			  </div>
+			</div>
+		<% end %>
+  </div>
+</div>

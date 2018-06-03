@@ -1,0 +1,40 @@
+<div>
+	<div class="col-md-2">
+		<% if @user.avatar.present? %>
+			<%= image_tag @user.avatar.url(:thumb) %>
+		<% else %>
+			<img src="/assets/default_avatar.jpg" alt="Avatar" width="150" height="150">
+		<% end %>
+	</div>
+	<div class="row">
+		<h1><%= @user.full_name %> - <%= @user.profession %></h1>
+		<p><%= link_to "Update profile", edit_user_path(current_user) %></p>
+	</div>
+</div>
+
+<div class="row">
+	<p>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Personal details</h3>
+			  </div>
+			  <div class="panel-body">
+			    <b>Profession:</b> <%= @user.profession %><br>
+			    <b>Education:</b> <%= @user.education %><br>
+			    <b>Age:</b> <%= @user.age %><br>
+			    <b>Address:</b> <%= @user.address.to_string %><br>
+			    <b>Email:</b> <%= @user.email %>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			    <b>About:</b> <%= @user.about %>
+			  </div>
+			</div>
+		</div>
+	</p>
+</div>
