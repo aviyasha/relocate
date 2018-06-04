@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
  	end
 
  	def age
+ 		return nil unless birth_date.present?
+ 		
  		Date.current.year - birth_date.year
  	end
 end
