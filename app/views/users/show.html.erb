@@ -23,7 +23,7 @@
 			    <b>Profession:</b> <%= @user.profession %><br>
 			    <b>Education:</b> <%= @user.education %><br>
 			    <b>Age:</b> <%= @user.age %><br>
-			    <b>Address:</b> <%= @user.address.to_string %><br>
+			    <b>Address:</b> <%= @user.address.try(:to_string) %><br>
 			    <b>Email:</b> <%= @user.email %>
 			  </div>
 			</div>
