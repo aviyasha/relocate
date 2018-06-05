@@ -1,10 +1,10 @@
 <div>
-	<div class="col-md-2">
-		<% if @user.avatar.present? %>
+	<% if @user.avatar.present? %>
+		<div class="col-md-2">
 			<%= image_tag @user.avatar.url(:thumb) %>
-		<% else %>
-			<img src="/assets/default_avatar.jpg" alt="Avatar" width="150" height="150">
-		<% end %>
+		</div>
+		<!-- <img src="/assets/default_avatar.jpg" alt="Avatar" width="150" height="150"> -->
+	<% end %>
 	</div>
 	<div class="row">
 		<% if @user.full_name.present? %>
