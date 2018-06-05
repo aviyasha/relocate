@@ -7,7 +7,9 @@
 		<% end %>
 	</div>
 	<div class="row">
-		<h1><%= @user.full_name %> - <%= @user.profession %></h1>
+		<% if @user.full_name.present? %>
+			<h1><%= @user.full_name %> - <%= @user.profession %></h1>
+		<% end %>
 		<p><%= link_to "Update profile", edit_user_path(current_user) %></p>
 	</div>
 </div>
